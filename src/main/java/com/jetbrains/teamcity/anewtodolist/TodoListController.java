@@ -56,7 +56,7 @@ public class TodoListController {
                 HttpMethod.PUT,  new HttpEntity<>(createHeaders(teamcityUser, teamcityToken)), String.class);
         logger.info("Request Body {}", result.getBody());
         latestBuild = null;
-        return "Success";
+        return "Success"; //mock change
     }
 
     HttpHeaders createHeaders(String username, String password){
