@@ -8,7 +8,7 @@
     </options>
     <parameters />
     <build-runners>
-      <runner id="RUNNER_1" name="" type="Maven2">
+      <runner id="RUNNER_1" name="My Custom Step Name" type="Maven2">
         <parameters>
           <param name="goals" value="clean package" />
           <param name="localRepoScope" value="agent" />
