@@ -6,6 +6,9 @@
     <options>
       <option name="artifactRules" value="target/*.jar" />
     </options>
+    <disabled-settings>
+      <setting-ref ref="RUNNER_1" />
+    </disabled-settings>
     <parameters />
     <build-runners>
       <runner id="RUNNER_1" name="My Custom Step Name" type="Maven2">
