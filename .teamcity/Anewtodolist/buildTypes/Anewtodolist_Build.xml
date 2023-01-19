@@ -76,7 +76,7 @@
           <param name="dayOfWeek" value="Sunday" />
           <param name="enableQueueOptimization" value="true" />
           <param name="hour" value="8" />
-          <param name="minute" value="0" />
+          <param name="minute" value="15" />
           <param name="promoteWatchedBuild" value="true" />
           <param name="revisionRule" value="lastFinished" />
           <param name="revisionRuleBuildBranch" value="+:&lt;default&gt;" />
