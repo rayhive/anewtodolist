@@ -67,7 +67,7 @@
         <parameters>
           <param name="branchFilter" value="+:*" />
           <param name="cronExpression_dm" value="*" />
-          <param name="cronExpression_dw" value="1,2,3" />
+          <param name="cronExpression_dw" value="1-5" />
           <param name="cronExpression_hour" value="*" />
           <param name="cronExpression_min" value="0" />
           <param name="cronExpression_month" value="*" />
