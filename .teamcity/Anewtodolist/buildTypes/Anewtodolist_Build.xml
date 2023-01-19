@@ -80,7 +80,7 @@
           <param name="promoteWatchedBuild" value="true" />
           <param name="revisionRule" value="lastFinished" />
           <param name="revisionRuleBuildBranch" value="+:&lt;default&gt;" />
-          <param name="schedulingPolicy" value="daily" />
+          <param name="schedulingPolicy" value="cron" />
           <param name="timezone" value="Australia/Melbourne" />
           <param name="triggerBuildWithPendingChangesOnly" value="true" />
         </parameters>
