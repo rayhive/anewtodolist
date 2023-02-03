@@ -76,7 +76,6 @@ object FastTest : BuildType({
         maven {
             goals = "clean test"
             runnerArgs = "-DMaven.test.failure.ignore=true -Dtest=*.unit.*Test"
-            dockerImage = "maven:latest"
         }
     }
 })
@@ -94,7 +93,6 @@ object SlowTest : BuildType({
         maven {
             goals = "clean test"
             runnerArgs = "-DMaven.test.failure.ignore=true -Dtest=*.integration.*Test"
-            dockerImage = "maven:latest"
         }
     }
 })
