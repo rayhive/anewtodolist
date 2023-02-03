@@ -30,10 +30,16 @@ version = "2022.10"
 project {
 
     buildType(Build)
+    buildType(FastTest)
+    buildType(SlowTest)
     buildType(Package)
 
     sequential{
         buildType(Build)
+        parallel{
+            buildType(FastTest)
+            buildType(SlowTest)
+        }
         buildType(Package)
     }
 }
@@ -50,11 +56,48 @@ object Build : BuildType({
     steps {
         maven {
             goals = "clean compile"
+            runnerArgs = "-DMaven.test.failure.ignore=true"
             dockerImage = "maven:latest"
         }
     }
 })
 
+
+object FastTest : BuildType({
+    name = "Fast Test"
+
+    artifactRules = "target/*.jar"
+
+    vcs {
+        root(DslContext.settingsRoot)
+    }
+
+    steps {
+        maven {
+            goals = "clean test"
+            runnerArgs = "-DMaven.test.failure.ignore=true -Dtest=*.unit.*Test"
+            dockerImage = "maven:latest"
+        }
+    }
+})
+
+object SlowTest : BuildType({
+    name = "Slow Test"
+
+    artifactRules = "target/*.jar"
+
+    vcs {
+        root(DslContext.settingsRoot)
+    }
+
+    steps {
+        maven {
+            goals = "clean test"
+            runnerArgs = "-DMaven.test.failure.ignore=true -Dtest=*.integration.*Test"
+            dockerImage = "maven:latest"
+        }
+    }
+})
 
 object Package : BuildType({
     name = "Package"
