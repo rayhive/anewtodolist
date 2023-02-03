@@ -30,10 +30,34 @@ version = "2022.10"
 project {
 
     buildType(Build)
+    buildType(Package)
+
+    sequential{
+        buildType(Build)
+        buildType(Package)
+    }
 }
 
 object Build : BuildType({
     name = "Build"
+
+    artifactRules = "target/*.jar"
+
+    vcs {
+        root(DslContext.settingsRoot)
+    }
+
+    steps {
+        maven {
+            goals = "clean pa"
+            dockerImage = "maven:latest"
+        }
+    }
+})
+
+
+object Package : BuildType({
+    name = "Package"
 
     artifactRules = "target/*.jar"
 
