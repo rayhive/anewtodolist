@@ -49,7 +49,7 @@ object Build : BuildType({
 
     steps {
         maven {
-            goals = "clean pa"
+            goals = "clean compile"
             dockerImage = "maven:latest"
         }
     }
