@@ -117,12 +117,13 @@ object Package : BuildType({
         vcs {
         }
         schedule {
-            schedulingPolicy = weekly {
+            schedulingPolicy = daily {
                 hour = 10
                 minute = 15
                 timezone = "Australia/Perth"
             }
             triggerBuild = always()
         }
+
     }
 })
