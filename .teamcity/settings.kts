@@ -119,11 +119,13 @@ object Package : BuildType({
         schedule {
             schedulingPolicy = daily {
                 hour = 10
-                minute = 15
+                minute = 20
                 timezone = "Australia/Perth"
             }
             triggerBuild = always()
+            withPendingChangesOnly = false
         }
+
 
     }
 })
