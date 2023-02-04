@@ -125,8 +125,6 @@ object Package : BuildType({
             }
             triggerBuild = always()
             withPendingChangesOnly = false
-            param("minute", "30")
-            param("hour", "10")
 
             enforceCleanCheckout = true
             enforceCleanCheckoutForDependencies = true
