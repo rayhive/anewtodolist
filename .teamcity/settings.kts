@@ -118,6 +118,9 @@ object Package : BuildType({
         }
         schedule {
             schedulingPolicy = weekly {
+                hour = 10
+                minute = 15
+                timezone = "Australia/Perth"
             }
             triggerBuild = always()
         }
