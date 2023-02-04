@@ -120,7 +120,7 @@ object Package : BuildType({
             schedulingPolicy = cron {
                 minutes = "35"
                 hours = "8"
-                dayOfWeek = "1-5"
+                dayOfWeek = "2-5"
                 timezone = "Australia/Perth"
             }
             triggerBuild = always()
