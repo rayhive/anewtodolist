@@ -117,17 +117,23 @@ object Package : BuildType({
         vcs {
         }
         schedule {
-            schedulingPolicy = daily {
-                hour = 10
-                minute = 30
+            schedulingPolicy = cron {
+                minutes = "35"
+                hours = "8"
+                dayOfWeek = "1-5"
                 timezone = "Australia/Perth"
             }
             triggerBuild = always()
             withPendingChangesOnly = false
+            param("minute", "30")
+            param("hour", "10")
 
             enforceCleanCheckout = true
             enforceCleanCheckoutForDependencies = true
         }
+
+
+
 
 
 
