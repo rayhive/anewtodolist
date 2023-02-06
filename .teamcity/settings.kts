@@ -118,11 +118,12 @@ object Package : BuildType({
         }
         schedule {
             schedulingPolicy = cron {
-                minutes = "35"
+                minutes = "50"
                 hours = "8"
                 dayOfWeek = "2-5"
                 timezone = "Australia/Perth"
             }
+            branchFilter = "+:<default>"
             triggerBuild = always()
             withPendingChangesOnly = false
 
